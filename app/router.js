@@ -7,8 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('scientists');
-  this.route('datat');
+  this.route('pesoideal', function() {
+    this.route('resultado');
+  });
   this.route('data');
   this.route('result');
 });
