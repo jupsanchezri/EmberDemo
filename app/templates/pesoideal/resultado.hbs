@@ -1,4 +1,50 @@
 RESULTADO
 {{altura}}
 ...
-{{filteredArticles}}
+{{BMI.pi}}
+{{BMI.pi}}
+{{BMI.piPorc}}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Concepto</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>PI</td>
+            <td>{{BMI.pi}} Kg</td>
+            <td>XXX</td>
+        </tr>
+        <tr>
+            <td>PIPorc</td>
+            <td>{{BMI.piPorc}} %</td>
+            <td>XXX</td>
+        </tr>
+        <tr>
+            <td>IMC</td>
+            <td>{{BMI.imc}} Kg/m²</td>
+            <td>XXX</td>
+        </tr>
+        <tr>
+            <td>BSA</td>
+            <td>{{BMI.bsa}} m²</td>
+            <td>XXX</td>
+        </tr>
+        <tr>
+            <td>LBM</td>
+            <td>{{BMI.lbm}} Kg</td>
+            <td>XXX</td>
+        </tr>
+        <tr>
+            <td>TBW</td>
+            <td>{{BMI.tbw}} litros</td>
+            <td>XXX</td>
+        </tr>
+    </tbody>
+</table>
+
+{{imc-alert imc=BMI.imc}}
