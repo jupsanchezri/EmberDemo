@@ -40,7 +40,7 @@ En el controlador de resultado va estar toda la logica para carcular el IMC y to
 Agregar el siguiente import para que se reconozca 'computed'
 * `import { computed } from '@ember/object';`
 
-`
+```
 queryParams: ['gender', 'height', 'age', 'weight'],
 gender: null,
 height: null,
@@ -128,12 +128,12 @@ actions: {
     	this.set('BMICalculated', result);
 	}
 }
-`
+```
 
 ## Templates
 
 ### application.hbs
-`
+```
 <h1 class="text-center">Cálculo de sobrepeso - IMC</h1>
 <div class="container">
   <div class="row">
@@ -147,10 +147,10 @@ actions: {
     </div>
   </div>
 </div>
-`
+```
 
 ### pesoideal.hbs
-`
+```
 <form action="/pesoideal/resultado" method="GET">
     <div class="form-group">
         <div class="form-check form-check-inline">
@@ -178,12 +178,12 @@ actions: {
 </form>
 
 {{outlet}}
-`
+```
 
 ### resultado.hbs
 
 La variable 'BMI' usada en la vista es la calculada en el controlador 'resultado.js'.
-`
+```
 <hr>
 <table class="table table-striped">
     <thead>
@@ -226,7 +226,7 @@ La variable 'BMI' usada en la vista es la calculada en el controlador 'resultado
         </tr>
     </tbody>
 </table>
-`
+```
 
 ## Componente alert
 
@@ -244,7 +244,7 @@ Al crear un componente se genera la vista (/template/components/imc-alert.hbs) y
 * En 'model()' se guarda los diferentes mensajes que puede tener de acuerdo al IMC (dato de entrada)
 * En 'alert' se escoge la alert de la lista de alerts (model()) de acuerdo al IMC
 * Se importa `import { computed } from '@ember/object';`
-`
+```
 model() {
     return [
         { min: 0, max: 16, message: 'Desnutrición severa', type: 'danger' },
@@ -270,25 +270,25 @@ alert: computed('model', function(){
     }
     return limits.slice(-1)[0];
 })
-`
+```
 
 ### imc-alert.hbs
 
 'alert' es la variable que se calculo en el controlador 'imc-alert.js'.
-`
+```
 <div class="alert alert-{{ alert.type }}" role="alert"> 
     {{ alert.message }}
 </div>
-`
+```
 
 ### resultado.hbs
 
 Para usar este component solo es referenciarlo en la vista que se desee implementar y mandale el parametro requerido 'IMC'.
 
 Agregar la siguiente linea al final de la vista de resultado.
-`
+```
 {{imc-alert imc=BMI.imc}}
-`
+```
 
 ## Running / Development
 
