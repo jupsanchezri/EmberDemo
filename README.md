@@ -53,7 +53,7 @@ BMI: computed('BMICalculated', function () {
         weight: this.get('weight'),
         age: this.get('age'),
         sex: this.get('gender')
-    };
+	};
     
     this.send('calcBMI', obj);
     return this.get('BMICalculated');
@@ -84,7 +84,7 @@ actions: {
             lbm = (Wt * 1.10) - ((128 * ((Wt / Ht) * (Wt / Ht))));
             Watson = 2.447 - (0.09156 * Age) + (0.1074 * Ht) + (0.3362 * Wt);
             Hume = (0.194786 * Ht) + (0.296785 * Wt) - 14.012934;
-        }
+		}
     
         if (Sex == "2") {
             PIdevine = ((Ht - 152.4) * (0.91) + 45.5);
@@ -99,7 +99,7 @@ actions: {
             lbm = (Wt * 1.07) - ((148 * ((Wt / Ht) * (Wt / Ht))));
             Watson = -2.097 + (0.1069 * Ht) + (0.2466 * Wt);
             Hume = (0.34454 * Ht) + (0.183809 * Wt) - 35.270121;
-        }
+		}
     
         let tbw = (Hume + Watson) / 2;
         let PI = (PIdevine + PIrobinson + PImiller + PIhamwi + PIprueba) / 5;
@@ -108,7 +108,9 @@ actions: {
         let PIPorc = (Wt / PI) * (100);
         PIPorc = Math.round(PIPorc * 100) / 100;
     
-        let bsa = Math.pow(Wt, 0.425) * Math.pow(Ht, 0.725) * 0.007184;
+        let bsa = Math.pow(Wt,
+		0.425) * Math.pow(Ht,
+		0.725) * 0.007184;
         bsa = Math.round(bsa * 1000) / 1000;
     
         lbm = Math.round(lbm * 100) / 100;
@@ -121,10 +123,10 @@ actions: {
             bsa: bsa,
             lbm: lbm,
             tbw: tbw
-        };
+		};
 
-        this.set('BMICalculated', result);
-    }
+    	this.set('BMICalculated', result);
+	}
 }
 `
 
