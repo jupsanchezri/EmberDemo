@@ -19,23 +19,23 @@ Se requieren las siguientes herramientas para reproducir el ejemplo.
 
 ## Creación de vistas y controlador
 
-Al empezar el proyecto existe la vista global denominada 'application.hbs', el cual es la estrutura base de las demás vistas que se creen.
+Al empezar el proyecto existe la vista global denominada 'application.hbs', el cual es la estructura base de las demás vistas que se creen.
 
-Para este ejemplo se crearan dos vistas mas, para ello se crea la ruta con los siguientes comandos (al generar una ruta, esta se agrega al router del sistema 'router.js', se crea el archivo Route dentro de la carpeta 'routes' y se crea la vista dentro de la carpeta 'templates').
+Para este ejemplo se crearán dos vistas más, para ello se crea la ruta con los siguientes comandos (al generar una ruta, esta se agrega al router del sistema 'router.js', se crea el archivo Route dentro de la carpeta 'routes' y se crea la vista dentro de la carpeta 'templates').
 
 * `ember generate route pesoideal`  vista /pesoideal
 * `ember generate route pesoideal/resultado` vista /pesoideal/resultado
 * `ember generate controller pesoideal/resultado` controlador para la vista resultado
 
-## Controllers
+## Controladores
 
 ### resultado.js
 
-En el controlador de resultado va estar toda la logica para carcular el IMC y todas sus demás variables relacionadas.
+En el controlador de resultado va estar toda la lógica para calcular el IMC y todas sus demás variables relacionadas.
 
-* Por medio de 'queryParams' recibimos los datos como genero, altura, peso y genero para calcular el IMC.
-* En actions esta la función que calcula las variables deseadas de acuerdo a los parámetros de entrada.
-* Se usa 'computed' como el inicializador para generar los datos finales para mostrar al usuario, con ayuda de los parámetros de entrada y la función de calculo creó.
+* Por medio de 'queryParams' recibimos los datos como género, altura y peso para calcular el IMC.
+* En actions está la función que calcula las variables deseadas de acuerdo a los parámetros de entrada.
+* Se usa 'computed' como el inicializador para generar los datos finales para mostrar al usuario, con ayuda de los parámetros de entrada y la función de cálculo generada.
 
 Agregar el siguiente import para que se reconozca 'computed'
 * `import { computed } from '@ember/object';`
@@ -232,9 +232,9 @@ La variable 'BMI' usada en la vista es la calculada en el controlador 'resultado
 
 Con lo anterior realizado logramos ingresar datos, pasarlos a una nueva vista, tomarlos y calcular las variables deseadas para mostrar en una tabla.
 
-Ahora se creara un mensaje alerta para mostrar al usuario en palabras textuales (No cifras) el estado de su peso.
+Ahora se creará un mensaje alerta para mostrar al usuario en palabras textuales (No cifras) el estado de su peso.
 
-Para ello se creara un componente llamado 'imc-alert', al cual se le envíe el IMC, y de acuerdo a este pueda determinar y mostrar un mensaje con el estado de la persona.
+Para ello se creará un componente llamado 'imc-alert', al cual se le envíe el IMC, y de acuerdo a este pueda determinar y mostrar un mensaje con el estado de la persona.
 
 * `ember generate component imc-alert`
 
@@ -274,7 +274,7 @@ alert: computed('model', function(){
 
 ### imc-alert.hbs
 
-'alert' es la variable que se calculo en el controlador 'imc-alert.js'.
+'alert' es la variable que se calculó en el controlador 'imc-alert.js'.
 ```
 <div class="alert alert-{{ alert.type }}" role="alert"> 
     {{ alert.message }}
@@ -283,7 +283,7 @@ alert: computed('model', function(){
 
 ### resultado.hbs
 
-Para usar este component solo es referenciarlo en la vista que se desee implementar y mandale el parametro requerido 'IMC'.
+Para usar este component solo es referenciarlo en la vista que se desee implementar y mandarle el parámetro requerido 'IMC'.
 
 Agregar la siguiente linea al final de la vista de resultado.
 ```
@@ -294,4 +294,4 @@ Agregar la siguiente linea al final de la vista de resultado.
 
 * `ember serve`
 * Visita tu app en [http://localhost:4200](http://localhost:4200).
-* Cuando se creo las rutas el formulario se hizo en la vista de 'pesoideal.hbs', por ende se accede desde [http://localhost:4200/pesoideal/](http://localhost:4200/pesoideal/).
+* Cuando se creo las rutas el formulario se hizo en la vista de 'pesoideal.hbs', por ende, se accede desde [http://localhost:4200/pesoideal/](http://localhost:4200/pesoideal/).
