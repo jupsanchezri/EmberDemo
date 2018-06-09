@@ -1,18 +1,16 @@
 {{!-- The following component displays Ember's default welcome message. --}}
-<h1 style="text-align: center;">Examen de peso</h1>
+<h1 class="text-center">Cálculo de sobrepeso - IMC</h1>
 {{!-- Feel free to remove this! --}}
 
 <div class="container">
   <div class="row">
-    <div class="col">Examen de peso CCI</div>
-  </div>
-  <div class="row">
-    <div class="col col-md-8">
-        {{outlet}}
-    </div>
     <div class="col col-md-4">
         <img src="/images/skylight.png" alt="" width="100%">
-        Examen
+        <p>El índice de masa corporal o IMC es el resultado de un cálculo entre el peso y la altura, permite determinar la corpulencia y el impacto que ésta puede tener en la salud.</p>
+        <p>El índice de masa corporal es una herramienta que han inventado los médicos para evaluar los riesgos para la salud asociados al sobrepeso.</p>
+    </div>
+    <div class="col col-md-8">
+        {{outlet}}
     </div>
   </div>
 </div>
