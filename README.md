@@ -15,6 +15,7 @@ Se requieren las siguientes herramientas para reproducir el ejemplo.
 * `npm install -g ember-cli` Instalación de Ember js.
 * `ember new [app-name]` nuevo proyecto [app-name]
 * `cd [app-name]` Directorio de la aplicación.
+* `npm install` Instalación de paquetes.
 * `ember install ember-bootstrap` Instalación de Bootstrap.
 
 ## Creación de vistas y controlador
